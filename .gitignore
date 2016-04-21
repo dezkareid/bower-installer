@@ -26,3 +26,5 @@ test/multiDirGlobWithSameNestedFolder/bower_components
 test/regExp/bower_components/
 test/regExp/build/
 test/regExp/UFL.txt
+test/minified/bower_components
+test/minified/build

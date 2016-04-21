@@ -1,0 +1,13 @@
+{
+	"name": "dk2",
+	"version": "1.0.0",
+	"main": "src/main/app.js",
+	"dependencies": {
+		"angular" : "latest",
+		"simple-line-icons": "latest"
+	},
+	"install": {
+		"path": "build/src",
+		"min": true
+	}
+}
