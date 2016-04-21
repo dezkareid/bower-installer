@@ -33,7 +33,9 @@ function expectFilesToExist(files, run) {
 		'test/glob/build',
 		'test/glob/bower_components',
 		'test/keyword/build',
-		'test/keyword/bower_components'
+		'test/keyword/bower_components',
+		'test/minified/build',
+		'test/minified/bower_components'
 	], function(file, callback) {
 		rimraf(path.join(process.cwd(), file), function() {
 			callback();
@@ -133,6 +135,16 @@ describe("Bower Installer", function() {
 				'test/mapping/build/src/ember-easyForm/subdirectory/ember-easyForm.js',
 				'test/mapping/build/src/jquery/jquery.js',
 				'test/mapping/build/src/jquery-ui/jquery-ui.js'
+			], run);
+		});
+	}, TIMEOUT);
+
+	it('Should pass minified', function(run) {
+		exec('node ../../bower-installer.js', {cwd: path.join(process.cwd(), 'test/minified')}, function(err, stdout, stderr) {
+			expect(err).toBeNull();
+			expectFilesToExist([
+				'test/minified/build/src/angular/angular.js',
+				'test/minified/build/src/simple-line-icons/simple-line-icons.css'	
 			], run);
 		});
 	}, TIMEOUT);
