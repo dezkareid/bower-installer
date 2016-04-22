@@ -54,6 +54,23 @@ bower-installer
 After executing this, `backbone.js` will exist under `some/path` relative to the location of your
 bower.json file.
 
+#Install Minified files
+You can add the "min" attribute to use add the minified files from dependencies. If there are not minified files in depedencies bower installer take the main file of your dependency.
+
+```javascript
+{
+  "name" : "test",
+  "version": "0.1",
+  "dependencies" : {
+    "backbone" : "latest"
+  },
+  "install" : {
+    "path" : "some/path",
+    "min" : true
+  }
+}
+```
+
 #Overriding main files
 A lot of registered components for bower do not include bower.json configuration. Therefore, bower does not know
 about any "main files" and therefore, by default bower-installer doesn't know about them either. Bower-installer
